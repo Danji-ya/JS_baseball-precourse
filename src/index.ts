@@ -4,3 +4,7 @@ function addTwo(a: number) {
 
 console.log(addTwo(5));
 console.log(addTwo('5'));
+
+// airbnb style
+const item = {}; // good
+const item2 = new Object(); // bad
