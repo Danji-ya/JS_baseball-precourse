@@ -1,10 +1,17 @@
-function addTwo(a: number) {
-  return a + 2;
+import { getComputerInputNumbers } from './utils/numberMaker';
+
+class BaseballGame {
+  computerInputNumbers: string;
+
+  constructor() {
+    this.computerInputNumbers = getComputerInputNumbers();
+  }
+
+  play(computerInputNumbers, userInputNumbers) {
+    return '결과 값 String';
+  }
 }
 
-console.log(addTwo(5));
-console.log(addTwo('5'));
+export default BaseballGame;
 
-// airbnb style
-const item = {}; // good
-const item2 = new Object(); // bad
+new BaseballGame();
