@@ -1,9 +1,9 @@
-const { merge } = require("webpack-merge");
-const webpackCommon = require("./webpack.common");
+const { merge } = require('webpack-merge');
+const webpackCommon = require('./webpack.common');
 
-module.exports =  merge(webpackCommon, {
+module.exports = merge(webpackCommon, {
   mode: 'development',
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   devServer: {
     historyApiFallback: true,
     hot: true,
@@ -14,8 +14,8 @@ module.exports =  merge(webpackCommon, {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"]
+        use: ['style-loader', 'css-loader'],
       },
-    ]
+    ],
   },
 });

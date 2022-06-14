@@ -6,7 +6,7 @@ module.exports = {
     main: './src/index.ts',
   },
   output: {
-    publicPath: '/',
+    publicPath: './',
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].[contenthash].js',
     clean: true,
@@ -20,9 +20,7 @@ module.exports = {
         test: /\.(ts|tsx|js|jsx)$/,
         loader: 'babel-loader',
         options: {
-          presets: [
-            '@babel/preset-typescript',
-          ],
+          presets: ['@babel/preset-typescript'],
         },
         exclude: /node_modules/,
       },
