@@ -4,9 +4,10 @@
     "@typescript-eslint"
   ],
   "extends": ["airbnb-base", "airbnb-typescript/base", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"], 
-  "parserOptions": { "project": ["./tsconfig.json"] },
+  "parserOptions": {"project": ["./tsconfig.json"] },
   "rules": {
     "no-new": "off",
     "class-methods-use-this": "off"
-  }
+  },
+  "ignorePatterns": ["test", "node_modules/"]
 }
