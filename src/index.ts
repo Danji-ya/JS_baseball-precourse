@@ -1,5 +1,5 @@
 import { DOM_SELECTOR } from './constants';
-import { $, addEventListener, getComputerInputNumbers } from './utils';
+import { $, addEventListener, getComputerInputNumbers, isValid } from './utils';
 
 class BaseballGame {
   computerInputNumbers: string | undefined;
@@ -11,7 +11,7 @@ class BaseballGame {
     this.addEventDelegation();
   }
 
-  play(computerInputNumbers, userInputNumbers) {
+  play(computerInputNumbers: string, userInputNumbers: string) {
     return '결과 값 String';
   }
 
@@ -25,8 +25,16 @@ class BaseballGame {
   }
 
   addEventDelegation() {
-    addEventListener($(DOM_SELECTOR.USER_INPUT), 'input', this.handleInput);
-    addEventListener($(DOM_SELECTOR.SUBMIT_BUTTON), 'click', this.handleSubmit);
+    addEventListener(
+      $(DOM_SELECTOR.USER_INPUT),
+      'input',
+      this.handleInput.bind(this),
+    );
+    addEventListener(
+      $(DOM_SELECTOR.SUBMIT_BUTTON),
+      'click',
+      this.handleSubmit.bind(this),
+    );
     addEventListener($(DOM_SELECTOR.RESULT), 'click', this.handleResult);
   }
 
@@ -36,7 +44,10 @@ class BaseballGame {
 
   handleSubmit(event: Event) {
     event.preventDefault();
-    console.log('TODO: 제출 처리');
+    if (!this.computerInputNumbers || !this.userInputNumbers) return;
+    if (!isValid(this.userInputNumbers)) return;
+
+    this.play(this.computerInputNumbers, this.userInputNumbers);
   }
 
   handleResult(event: Event) {

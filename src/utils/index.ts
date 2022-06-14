@@ -1,4 +1,5 @@
 import { $, addEventListener } from './dom';
 import { getComputerInputNumbers } from './numberMaker';
+import isValid from './validate';
 
-export { $, addEventListener, getComputerInputNumbers };
+export { $, addEventListener, getComputerInputNumbers, isValid };
