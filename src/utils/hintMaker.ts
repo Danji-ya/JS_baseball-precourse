@@ -31,7 +31,7 @@ function getHint(computerInputNumbers: string, userInputNumbers: string) {
   if (ball === 0 && strike !== 0) return `${strike}${RESULT.STRIKE}`;
   if (strike === 0 && ball !== 0) return `${ball}${RESULT.BALL}`;
 
-  return `${strike}${RESULT.STRIKE} ${ball}${RESULT.BALL}`;
+  return `${ball}${RESULT.BALL} ${strike}${RESULT.STRIKE}`;
 }
 
 export { getHint, getStrikeBallCount };

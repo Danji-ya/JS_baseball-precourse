@@ -1,5 +1,3 @@
-import { Random } from '@woowacourse/mission-utils';
-
 import { INPUT_NUMBER } from '../constants';
 
 function isLessThanInputMaxLength(size: number) {
@@ -7,7 +5,7 @@ function isLessThanInputMaxLength(size: number) {
 }
 
 function getRandomNumber(startInclusive: number, endInclusive: number) {
-  return Random.pickNumberInRange(startInclusive, endInclusive);
+  return MissionUtils.Random.pickNumberInRange(startInclusive, endInclusive);
 }
 
 function getComputerInputNumbers(): string {
