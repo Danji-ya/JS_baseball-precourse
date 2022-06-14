@@ -17,4 +17,17 @@ const ERROR_MESSAGE = {
   NON_LENGTH: `${INPUT_NUMBER.LENGTH} 자릿수 까지만 입력해주세요.`,
 };
 
-export { DOM_SELECTOR, INPUT_NUMBER, ERROR_MESSAGE };
+const RESULT = {
+  STRIKE: '스트라이크',
+  BALL: '볼',
+  NOTHING: '낫싱',
+  ANSWER: `
+    <h3>정답을 맞추셨습니다.</h3>
+    <div>
+      <p>게임을 새로 시작하시겠습니까?</p>
+      <button id=${DOM_SELECTOR.RESET_BUTTON.slice(1)}>재시작</button>
+    </div>
+  `,
+};
+
+export { DOM_SELECTOR, INPUT_NUMBER, ERROR_MESSAGE, RESULT };

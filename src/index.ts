@@ -1,5 +1,11 @@
-import { DOM_SELECTOR } from './constants';
-import { $, addEventListener, getComputerInputNumbers, isValid } from './utils';
+import { DOM_SELECTOR, RESULT } from './constants';
+import {
+  $,
+  addEventListener,
+  getComputerInputNumbers,
+  getHint,
+  isValid,
+} from './utils';
 
 class BaseballGame {
   computerInputNumbers: string | undefined;
@@ -11,11 +17,17 @@ class BaseballGame {
     this.addEventDelegation();
   }
 
-  play(computerInputNumbers: string, userInputNumbers: string) {
-    return '결과 값 String';
+  renderResult(markup: string) {
+    ($(DOM_SELECTOR.RESULT) as HTMLDivElement).innerHTML = markup;
   }
 
-  // 게임 시작 및 초기화시 사용되는 초기화함수
+  play(computerInputNumbers: string, userInputNumbers: string) {
+    if (computerInputNumbers === userInputNumbers) return RESULT.ANSWER;
+    const hint = getHint(computerInputNumbers, userInputNumbers);
+
+    return hint;
+  }
+
   initialize() {
     this.computerInputNumbers = getComputerInputNumbers();
     this.userInputNumbers = '';
@@ -47,12 +59,13 @@ class BaseballGame {
     if (!this.computerInputNumbers || !this.userInputNumbers) return;
     if (!isValid(this.userInputNumbers)) return;
 
-    this.play(this.computerInputNumbers, this.userInputNumbers);
+    const result = this.play(this.computerInputNumbers, this.userInputNumbers);
+    this.renderResult(result);
   }
 
   handleResult(event: Event) {
     const target = event.target as HTMLElement;
-    if (target.id !== DOM_SELECTOR.SUBMIT_BUTTON.slice(1)) return;
+    if (target.id !== DOM_SELECTOR.RESET_BUTTON.slice(1)) return;
 
     console.log('TODO: 재시작 버튼 처리');
   }
