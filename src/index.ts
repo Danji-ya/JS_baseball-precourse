@@ -47,7 +47,11 @@ class BaseballGame {
       'click',
       this.handleSubmit.bind(this),
     );
-    addEventListener($(DOM_SELECTOR.RESULT), 'click', this.handleResult);
+    addEventListener(
+      $(DOM_SELECTOR.RESULT),
+      'click',
+      this.handleResult.bind(this),
+    );
   }
 
   handleInput(event: Event) {
@@ -67,7 +71,7 @@ class BaseballGame {
     const target = event.target as HTMLElement;
     if (target.id !== DOM_SELECTOR.RESET_BUTTON.slice(1)) return;
 
-    console.log('TODO: 재시작 버튼 처리');
+    this.initialize();
   }
 }
 
