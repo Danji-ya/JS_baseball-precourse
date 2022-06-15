@@ -33,7 +33,7 @@ class BaseballGame {
     this.userInputNumbers = '';
 
     ($(DOM_SELECTOR.USER_INPUT) as HTMLInputElement).value = '';
-    ($(DOM_SELECTOR.RESULT) as HTMLDivElement).innerHTML = '';
+    this.renderResult('');
   }
 
   addEventDelegation() {
