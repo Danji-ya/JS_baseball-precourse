@@ -50,7 +50,7 @@ class BaseballGame {
     addEventListener(
       $(DOM_SELECTOR.RESULT),
       'click',
-      this.handleResult.bind(this),
+      this.handleReset.bind(this),
     );
   }
 
@@ -67,7 +67,7 @@ class BaseballGame {
     this.renderResult(result);
   }
 
-  handleResult(event: Event) {
+  handleReset(event: Event) {
     const target = event.target as HTMLElement;
     if (target.id !== DOM_SELECTOR.RESET_BUTTON.slice(1)) return;
 
