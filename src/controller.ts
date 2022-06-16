@@ -62,7 +62,8 @@ class Controller {
 
   handleReset(event: Event) {
     const target = event.target as HTMLElement;
-    if (target.id !== DOM_SELECTOR.RESET_BUTTON.slice(1)) return;
+    const resetBtnId = DOM_SELECTOR.RESET_BUTTON.slice(1);
+    if (target.id !== resetBtnId) return;
 
     this.initialize();
   }
