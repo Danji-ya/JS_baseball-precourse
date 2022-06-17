@@ -1,5 +1,5 @@
 describe("구현 결과가 요구사항과 일치해야 한다.", () => {
-  const baseUrl = "../dist/index.html";
+  const baseUrl = 'http://localhost:9000/index.html';
   const SELECTOR = {
     INPUT: "#user-input",
     SUBMIT: "#submit",
