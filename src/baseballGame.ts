@@ -2,9 +2,14 @@ import { $, getHint } from './utils';
 import { DOM_SELECTOR, RESULT } from './constants';
 
 class BaseballGame {
-  computerInputNumbers: string | undefined;
+  computerInputNumbers: string;
 
-  userInputNumbers: string | undefined;
+  userInputNumbers: string;
+
+  constructor() {
+    this.computerInputNumbers = '';
+    this.userInputNumbers = '';
+  }
 
   play(computerInputNumbers: string, userInputNumbers: string) {
     if (computerInputNumbers === userInputNumbers) return RESULT.ANSWER;
