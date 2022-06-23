@@ -17,7 +17,7 @@ class Controller {
 
   initialize() {
     this.baseballGame.setComputerInputValue(getComputerInputNumbers());
-    this.baseballGame.resetUserInputValue('');
+    this.baseballGame.resetUserInputValue();
     this.gameResult.render('');
   }
 

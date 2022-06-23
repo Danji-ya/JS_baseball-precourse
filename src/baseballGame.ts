@@ -34,9 +34,9 @@ class BaseballGame {
     this.userInputNumbers = value;
   }
 
-  resetUserInputValue(value: string) {
+  resetUserInputValue() {
     this.setUserInputValue('');
-    ($(DOM_SELECTOR.USER_INPUT) as HTMLInputElement).value = value;
+    ($(DOM_SELECTOR.USER_INPUT) as HTMLInputElement).value = '';
   }
 }
 
