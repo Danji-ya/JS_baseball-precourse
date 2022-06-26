@@ -2,9 +2,14 @@ import { $, getHint } from './utils';
 import { DOM_SELECTOR, RESULT } from './constants';
 
 class BaseballGame {
-  computerInputNumbers: string | undefined;
+  computerInputNumbers: string;
 
-  userInputNumbers: string | undefined;
+  userInputNumbers: string;
+
+  constructor() {
+    this.computerInputNumbers = '';
+    this.userInputNumbers = '';
+  }
 
   play(computerInputNumbers: string, userInputNumbers: string) {
     if (computerInputNumbers === userInputNumbers) return RESULT.ANSWER;
@@ -29,9 +34,9 @@ class BaseballGame {
     this.userInputNumbers = value;
   }
 
-  resetUserInputValue(value: string) {
+  resetUserInputValue() {
     this.setUserInputValue('');
-    ($(DOM_SELECTOR.USER_INPUT) as HTMLInputElement).value = value;
+    ($(DOM_SELECTOR.USER_INPUT) as HTMLInputElement).value = '';
   }
 }
 
